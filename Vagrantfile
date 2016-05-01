@@ -14,6 +14,10 @@ Vagrant.configure(2) do |config|
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "coreos-alpha"
 
+  # Add synced_folder
+  # Require vagrant plugin: vagrant-winnfsd. To install use this command: vagrant plugin install vagrant-winnfsd 
+  config.vm.synced_folder ".", "/vagrant", type: 'nfs'
+
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
